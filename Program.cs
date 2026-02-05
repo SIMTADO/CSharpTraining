@@ -1,5 +1,6 @@
-using System;
+using static System.Console;
 using LAPIN;
+
 static class Program
 {
     static void Main()
@@ -17,8 +18,16 @@ static class Program
                 lapin.Avancer(); // Chaque lapin avance
             }
         }
+        WriteLine("Course terminée");
 
-        // Donner le lapin gagnant
+        Lapin lapinGagnant = GetLapinGagnant(lapins); // Par défaut le premier lapin est gagnant
+        
+        WriteLine($"Le lapin gagnant est {lapinGagnant.surnom} avec une position de {lapinGagnant.Position}"); // Affiche le lapin gagnant et sa position
+    
+    }
+
+    static Lapin GetLapinGagnant(Lapin[] lapins)
+    {
         int maxPosition = 0;
         Lapin lapinGagnant = lapins[0]; // Par défaut le premier lapin est gagnant
         foreach(Lapin lapin in lapins)
@@ -29,7 +38,6 @@ static class Program
                 lapinGagnant = lapin;
             }
         }
-
-        Console.WriteLine($"Le lapin gagnant est {lapinGagnant.surnom} avec une position de {maxPosition}");
+        return lapinGagnant;
     }
 }

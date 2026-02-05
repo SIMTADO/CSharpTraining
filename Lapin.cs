@@ -1,4 +1,4 @@
-using random = System.Random;
+using randonFunc = System.Random;
 
 namespace LAPIN;
 class Lapin
@@ -23,7 +23,7 @@ class Lapin
 
     public void Avancer()
     {
-       Position += new random().Next(0, 05);
+       Position += new randonFunc().Next(0, 5);
     }
 
 }
