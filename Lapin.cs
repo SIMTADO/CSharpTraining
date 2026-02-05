@@ -1,8 +1,10 @@
+using random = System.Random;
+
 namespace LAPIN;
 class Lapin
 {
-    private string surnom;
-    private int age;
+    public string surnom;
+    public int age;
     private int position;
     static int nombreDeLapins;
     public int Position { set; get;}
@@ -17,6 +19,11 @@ class Lapin
     public int NombreDeLapins()
     {
         return nombreDeLapins;
+    }
+
+    public void Avancer()
+    {
+       Position += new random().Next(0, 05);
     }
 
 }
