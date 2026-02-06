@@ -1,6 +1,6 @@
 using randonFunc = System.Random;
 
-namespace LAPIN;
+namespace ANIMALS;
 class Lapin
 {
     public string surnom;

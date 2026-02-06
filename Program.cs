@@ -1,5 +1,5 @@
 using static System.Console;
-using LAPIN;
+using ANIMALS;
 
 static class Program
 {
@@ -19,13 +19,10 @@ static class Program
             }
         }
         WriteLine("Course terminée");
-
         Lapin lapinGagnant = GetLapinGagnant(lapins); // Par défaut le premier lapin est gagnant
-        
         WriteLine($"Le lapin gagnant est {lapinGagnant.surnom} avec une position de {lapinGagnant.Position}"); // Affiche le lapin gagnant et sa position
     
     }
-
     static Lapin GetLapinGagnant(Lapin[] lapins)
     {
         int maxPosition = 0;
