@@ -7,34 +7,35 @@ static class Program
     {
         Lapin Moussa = new Lapin("Moussa", 10); // Premier lapin créé
         Lapin Barda = new Lapin("Barda", 15); // Deuxième lapin créé
-        Lapin Djibi = new Lapin("Djibi",50); // Troisième lapin créé
+        Tortue Ninja = new Tortue("Tortue Ninja", 100, 5); // Tortue créée
+        Tortue Gaba = new Tortue("Tortue Gaba", 100, 35); // Tortue créée
 
-        Lapin[] lapins = { Moussa, Barda, Djibi }; // Tableau pour stocker les lapins
+        Animal[] animaux = { Moussa, Barda, Ninja, Gaba }; // Tableau pour stocker les animaux
 
         for(int i=0; i<100; i++)
         {
-            foreach(Lapin lapin in lapins)
+            foreach(Animal animal in animaux)
             {
-                lapin.Avancer(); // Chaque lapin avance
+                animal.Avancer(); // Chaque animal avance
             }
         }
         WriteLine("Course terminée");
-        Lapin lapinGagnant = GetLapinGagnant(lapins); // Par défaut le premier lapin est gagnant
-        WriteLine($"Le lapin gagnant est {lapinGagnant.surnom} avec une position de {lapinGagnant.Position}"); // Affiche le lapin gagnant et sa position
+        Animal animalGagnant = GetAnimalGagnant(animaux); // Par défaut le premier animal est gagnant
+        WriteLine($"L'animal gagnant est {animalGagnant.ToString()}"); // Affiche l'animal gagnant et sa position
     
     }
-    static Lapin GetLapinGagnant(Lapin[] lapins)
+    static Animal GetAnimalGagnant(Animal[] animaux)
     {
         int maxPosition = 0;
-        Lapin lapinGagnant = lapins[0]; // Par défaut le premier lapin est gagnant
-        foreach(Lapin lapin in lapins)
+        Animal animalGagnant = animaux[0]; // Par défaut le premier lapin est gagnant
+        foreach(Animal animal in animaux)
         {
-            if(lapin.Position > maxPosition)
+            if(animal.Position > maxPosition)
             {
-                maxPosition = lapin.Position;
-                lapinGagnant = lapin;
+                maxPosition = animal.Position;
+                animalGagnant = animal;
             }
         }
-        return lapinGagnant;
+        return animalGagnant;
     }
 }
